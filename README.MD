@@ -1,0 +1,3 @@
+This bot's purpose is to track my finances through a group in telegram, where I'll send a message every time I make a payment or an investment and the bot will add it to my tracking sheet.
+
+I'll use a language model to identify the correct category of the payment or investment and insert in the correct row of the sheet. After the basic idea is working I plan to also implement the functionality of sending monthly, then weekly and annual finance reports for me and my partner (who will also send his payments and investments in the group for the bot to track).
