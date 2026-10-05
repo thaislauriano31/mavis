@@ -2,4 +2,6 @@ venv
 .env
 gcp_keys.json
 
+__pycache__/
+
 test_sheet.py
