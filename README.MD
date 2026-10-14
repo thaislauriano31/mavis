@@ -31,6 +31,6 @@ Muitas vezes ficamos paralisados tentando decidir qual tarefa realizar nos momen
 ## 🛠️ Tecnologias Utilizadas
 
 - **Linguagem:** Python
-- **Bot:** API do Telegram (`python-telegram-bot` ou `pyTelegramBotAPI`)
+- **Bot:** API do Telegram (`python-telegram-bot`)
 - **Armazenamento:** Supabase
 - **Agendamento:** `APScheduler`
