@@ -13,9 +13,9 @@ Muitas vezes ficamos paralisados tentando decidir qual tarefa realizar nos momen
 ## 🚀 Funcionalidades
 
 ### ⚙️ Fase 1 (MVP - Funcionalidades Principais)
-- [ ] **Captura de Tarefas via Telegram:** Envio simples de tarefas informando nome, tempo estimado, nível de energia e prioridade.
-- [ ] **Roleta Inteligente de Tarefas:** Sorteio automático de tarefas com base nos filtros de tempo disponível e nível de energia atual.
-- [ ] **Gerenciamento de Status:** Registro e baixa de tarefas executadas.
+- [X] **Captura de Tarefas via Telegram:** Envio simples de tarefas informando nome, tempo estimado, nível de energia e prioridade.
+- [X] **Roleta Inteligente de Tarefas:** Sorteio automático de tarefas com base nos filtros de tempo disponível e nível de energia atual.
+- [X] **Gerenciamento de Status:** Registro e baixa de tarefas executadas.
 
 ### ⏰ Fase 2 (Rotina & Acompanhamento)
 - [ ] **Check-in Noturno (20h):** Pergunta automática solicitando as 1 a 3 tarefas **inegociáveis** do dia seguinte.
