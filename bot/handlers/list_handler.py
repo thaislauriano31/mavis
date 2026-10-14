@@ -6,7 +6,7 @@ task_repo = TaskRepository()
 
 async def list_tasks_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Busca tarefas pendentes
-    tasks = task_repo.get_eligible_tasks(max_duration=999, energy_level="baixa") # Ajusta a query no repo se necessário
+    tasks = task_repo.get_eligible_tasks(max_duration=999, energy_level="baixa")
     
     if not tasks:
         await update.message.reply_text("🎉 Nenhuma tarefa pendente!")

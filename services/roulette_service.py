@@ -21,7 +21,7 @@ class RouletteService:
         time_taken = 0
         while time_taken < max_duration:
             task = random.choices(tasks, weights=weights)[0]
-            if time_taken + task["duration_minutes"] <= max_duration:
+            if time_taken + task["duration_minutes"] <= max_duration and task not in eligible_tasks:
                 eligible_tasks.append(task)
                 time_taken += task["duration_minutes"]
             else:
