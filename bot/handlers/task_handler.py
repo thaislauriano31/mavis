@@ -33,5 +33,6 @@ async def add_task_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"⏱️ **Duração:** {created['duration_minutes']} min\n"
         f"⚡ **Energia:** {created['energy']}\n"
         f"🎯 **Prioridade:** {created['priority']}"
+        f"🏷️ **Categoria:** {created['category']}\n"
     )
     await update.message.reply_text(mensagem_sucesso, parse_mode="Markdown")
