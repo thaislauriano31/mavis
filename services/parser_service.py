@@ -22,12 +22,13 @@ class TaskParserService:
         """
         system_prompt = (
             "Você é um assistente extrator de tarefas. Sua única função é analisar a mensagem do usuário "
-            "e extrair os dados da tarefa em formato JSON estrito.\n"
+            "e extrair os dados da tarefa em formato JSON estrito. Se a mensagem não representar uma tarefa, "
+            "retorne um json vazio.\n"
             "Regras:\n"
             "- 'title': título resumido da tarefa (string).\n"
             "- 'duration_minutes': estimativa em minutos (inteiro). Se não informado, use 30.\n"
             "- 'energy': uma estimativa do nível de energia necessário para executar a tarefa. Se não for fornecida, estime. Deve ser estritamente 'baixa', 'media' ou 'alta'. Se não souber, use 'media'.\n"
-            "- 'priority': inteiro de 1 a 3 (1=baixa, 2=média, 3=alta).\n"
+            "- 'priority': inteiro de 1 a 3 (1=alta, 2=média, 3=baixa).\n"
             "- 'category': uma palavra descrevendo o contexto. As possíveis categorias são: 'casa', 'mestrado', 'pessoal'. Nunca escolha uma categoria que não esteja na lista.\n"
             "- Responda APENAS com o objeto JSON sem marcadores markdown ou explicações adicionais."
         )
@@ -63,5 +64,5 @@ class TaskParserService:
                 "duration_minutes": 30,
                 "energy": "media",
                 "priority": 2,
-                "category": "geral"
+                "category": "pessoal"
             }
