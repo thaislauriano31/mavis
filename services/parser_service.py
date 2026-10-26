@@ -48,7 +48,10 @@ class TaskParserService:
                 temperature=0.1,
                 response_format={"type": "json_object"}
             )
-            
+
+            if not response:
+                return {}
+
             raw_text = response.choices[0].message.content.strip()
             parsed_json = json.loads(raw_text)
             

@@ -12,12 +12,16 @@ async def add_task_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Ignora se for comando (ex: /start, /roleta)
     if user_text.startswith('/'):
         return
-
-    await update.message.reply_text("🤖 Processando tarefa...")
     
     # 1. Parsing com LLM
     parsed = parser_service.parse_text_to_task(user_text)
+
+    if not parsed:
+        await update.message.reply_text("❌ Não consegui identificar uma tarefa na sua mensagem. Por favor, tente novamente com mais detalhes.")
+        return
     
+    await update.message.reply_text("🤖 Processando tarefa...")
+
     # 2. Salva no Supabase
     created = task_repo.create_task(
         title=parsed["title"],
@@ -32,7 +36,7 @@ async def add_task_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📌 **Título:** {created['title']}\n"
         f"⏱️ **Duração:** {created['duration_minutes']} min\n"
         f"⚡ **Energia:** {created['energy']}\n"
-        f"🎯 **Prioridade:** {created['priority']}"
-        f"🏷️ **Categoria:** {created['category']}\n"
+        f"🎯 **Prioridade:** {created['priority']}\n"
+        f"🏷️ **Categoria:** {created['category']}"
     )
     await update.message.reply_text(mensagem_sucesso, parse_mode="Markdown")
