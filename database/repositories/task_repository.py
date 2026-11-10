@@ -41,6 +41,7 @@ class TaskRepository:
             .order("priority", desc=True)
             .execute()
         )
+        print(f"DEBUG: Tarefas encontradas (repository): {response.data}")  # Debugging line to check the tasks retrieved
         return response.data
 
     def mark_as_completed(self, task_id: str) -> Optional[Dict[str, Any]]:
