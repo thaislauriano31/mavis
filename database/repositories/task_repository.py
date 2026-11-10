@@ -36,7 +36,6 @@ class TaskRepository:
             self.client.table("tasks")
             .select("*")
             .eq("status", "pendente")
-            .eq("is_non_negotiable", False)
             .lte("duration_minutes", max_duration)
             .eq("energy", energy_level)
             .order("priority", desc=True)
